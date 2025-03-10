@@ -36,6 +36,10 @@ public class Contacto {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     /**
      * Obtiene la lista de números de teléfono del contacto.
      *
@@ -44,4 +48,12 @@ public class Contacto {
     public List<String> getPhones() {
         return this.phones;
     }
+
+    public void setPhones(List<String> phones) {
+        this.phones = phones;
+    }
 }
+    
+
+
+

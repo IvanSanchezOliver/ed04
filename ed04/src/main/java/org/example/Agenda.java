@@ -4,13 +4,29 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Representa una agenda que almacena y gestiona contactos.
+ */
 public class Agenda {
+
+    /** Lista de contactos almacenados en la agenda. */
     private List<Contacto> contacts; // Lista de Contacto
 
+    /**
+     * Constructor de la clase Agenda.
+     * Inicializa una lista vacía de contactos.
+     */
     public Agenda() {
         this.contacts = new ArrayList<>();
     }
 
+    /**
+     * Agrega un contacto a la agenda. Si el contacto ya existe, se añade el nuevo número
+     * a su lista de teléfonos.
+     *
+     * @param name Nombre del contacto.
+     * @param phone Número de teléfono a agregar.
+     */
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Contacto c : contacts) {
@@ -27,6 +43,11 @@ public class Agenda {
         }
     }
 
+    /**
+     * Elimina un contacto de la agenda por su nombre.
+     *
+     * @param name Nombre del contacto a eliminar.
+     */
     public void removeContact(String name) {
         Iterator<Contacto> it = contacts.iterator();
 
@@ -39,6 +60,14 @@ public class Agenda {
         }
     }
 
+    /**
+     * Modifica un número de teléfono de un contacto.
+     * Si el número antiguo existe en la lista, se reemplaza con el nuevo número.
+     *
+     * @param name Nombre del contacto a modificar.
+     * @param oldPhone Número de teléfono actual a modificar.
+     * @param newPhone Nuevo número de teléfono a establecer.
+     */
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Contacto c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -53,6 +82,11 @@ public class Agenda {
         }
     }
 
+    /**
+     * Obtiene la lista de contactos almacenados en la agenda.
+     *
+     * @return Lista de contactos.
+     */
     public List<Contacto> getContacts() {
         return this.contacts;
     }

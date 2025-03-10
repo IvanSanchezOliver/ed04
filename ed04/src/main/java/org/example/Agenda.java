@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Representa una agenda que almacena y gestiona contactos.
- */
-public class Agenda {
+public class Agenda implements AgendaInterface {
 
     /** Lista de contactos almacenados en la agenda. */
     private List<Persona> contacts; // Lista de Persona
@@ -27,6 +24,7 @@ public class Agenda {
      * @param name Nombre del contacto.
      * @param phone Número de teléfono a agregar.
      */
+    @Override
     public void addContact(String name, String phone) {
         boolean exists = false;
         for (Persona c : contacts) {
@@ -48,6 +46,7 @@ public class Agenda {
      *
      * @param name Nombre del contacto a eliminar.
      */
+    @Override
     public void removeContact(String name) {
         Iterator<Persona> it = contacts.iterator();
 
@@ -68,6 +67,7 @@ public class Agenda {
      * @param oldPhone Número de teléfono actual a modificar.
      * @param newPhone Nuevo número de teléfono a establecer.
      */
+    @Override
     public void modifyPhoneNumber(String name, String oldPhone, String newPhone) {
         for (Persona c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -87,6 +87,7 @@ public class Agenda {
      *
      * @return Lista de contactos.
      */
+    @Override
     public List<Persona> getContacts() {
         return this.contacts;
     }
